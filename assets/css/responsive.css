@@ -1,0 +1,136 @@
+/* Ecobazar – responsive rules (loaded after style.css) */
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (min-width: 1360px) {
+  .footer-dark__pattern { display: block; }
+}
+
+@media (max-width: 1100px) {
+  .deco--chili, .deco--pea, .deco--onion, .deco--root { display: none; }
+}
+
+@media (max-width: 960px) {
+  .product-grid--5 { --cols: 3; }
+  .product-grid--4 { --cols: 3; }
+  .features__list { grid-template-columns: repeat(2, 1fr); }
+  .feature:nth-child(2) { border-right: 0; }
+  .feature:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .footer-dark__grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-col--about { grid-column: 1 / -1; }
+  .footer-col--about p { max-width: 36em; }
+  .newsletter__inner { flex-wrap: wrap; }
+  .newsletter__copy { flex: 1 1 260px; }
+  .newsletter__form { width: 100%; }
+}
+
+/* collapse nav */
+@media (max-width: 900px) {
+  .nav-toggle { display: inline-flex; }
+  .mainnav__inner { flex-wrap: wrap; }
+  .nav-links {
+    order: 5; display: none; flex-direction: column; align-items: stretch; gap: 0;
+    width: 100%; margin: 0; padding: 4px 0 12px; border-top: 1px solid #e3e3e3;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links > li > .nav-links__link { width: 100%; justify-content: space-between; padding: 12px 4px; }
+  .nav-links .dropdown__menu {
+    position: static; opacity: 1; visibility: visible; transform: none; display: none;
+    box-shadow: none; border: 0; background: #fff; margin-bottom: 6px;
+  }
+  .nav-links .dropdown.is-open > .dropdown__menu { display: block; }
+  @media (hover: hover) { .nav-links .dropdown:hover > .dropdown__menu { display: none; } .nav-links .dropdown.is-open:hover > .dropdown__menu { display: block; } }
+  .mainnav__phone { margin-left: auto; padding-right: 2px; }
+}
+
+@media (max-width: 820px) {
+  .hero { padding: 36px 0 60px; }
+  .slide { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .slide__media { max-width: 440px; }
+  .slide__copy { padding: 0; display: flex; flex-direction: column; align-items: center; }
+  .slide__copy h1 { max-width: 14em; }
+  .hero__arrow { top: 28%; }
+  .deco--pepper, .deco--leaf-tr { display: none; }
+
+  .banners__grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
+  .testimonials__grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; gap: 26px; }
+  .news__grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
+  .news__grid::before { top: 0; }
+}
+
+@media (max-width: 768px) {
+  .topbar__inner { justify-content: center; padding: 6px 0; flex-wrap: wrap; row-gap: 4px; }
+  .header-main__inner { grid-template-columns: 1fr auto; gap: 14px 16px; padding: 16px 0; }
+  .search { grid-column: 1 / -1; order: 3; }
+  .section-title { font-size: 24px; }
+  .product-grid--4, .product-grid--5 { --cols: 2; }
+  .p-card { padding: 8px 10px 14px; }
+  .p-media { min-height: 160px; }
+  .p-info { align-items: flex-end; }
+  .products { padding: 44px 0 48px; }
+  .video__content { aspect-ratio: auto; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
+  .copyright { order: 3; }
+  .newsletter__inner { gap: 20px; }
+  .news-card h3 { font-size: 15px; }
+}
+
+@media (max-width: 560px) {
+  .container { width: min(100% - 28px, var(--container)); }
+  .topbar__location { font-size: 11px; text-align: center; }
+  .topbar__right { font-size: 11px; }
+  .categories__btn { width: auto; padding: 0 14px; }
+  .mainnav__phone { display: none; }
+  .features__list { grid-template-columns: 1fr; }
+  .feature { border-right: 0; border-bottom: 1px solid var(--line); flex-direction: row; align-items: center; gap: 16px; padding: 18px 20px; }
+  .feature:last-child { border-bottom: 0; }
+  .feature:nth-child(2) { border-bottom: 1px solid var(--line); }
+  .tabs { gap: 4px 22px; }
+  .tabs__btn + .tabs__btn::before { left: -12px; }
+  .p-cart { width: 36px; height: 36px; }
+  .p-name { font-size: 13px; }
+  .p-price { font-size: 14px; }
+  .p-media img { width: 100%; max-width: 190px; }
+  .p-card--sm .p-media img { max-width: 155px; }
+  .footer-dark__grid { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+  .footer-col--insta { grid-column: 1 / -1; }
+  .insta { max-width: 260px; }
+  .nav-links { padding-bottom: 8px; }
+  .hero__arrow { display: none; }
+}
+
+@media (max-width: 380px) {
+  .mainnav__phone { display: none; }
+  .logo__text { font-size: 24px; }
+}
+
+@media (hover: none) {
+  .p-actions { opacity: 1; transform: none; }
+  .p-action { width: 30px; height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+
+/* ---------- Deal of the month ---------- */
+@media (max-width: 1100px) {
+  .deal__inner { grid-template-columns: 1fr minmax(0, 400px) 1fr; }
+  .deal__img--veg { margin-left: 2%; width: min(260px, 100%); }
+  .deal__img--farmer { margin-right: 2%; width: min(280px, 100%); }
+}
+@media (max-width: 860px) {
+  .deal__inner { grid-template-columns: 1fr 1fr; grid-template-areas: "copy copy" "veg farmer"; min-height: 0; align-items: end; }
+  .deal__copy { grid-area: copy; padding: 40px 20px 8px; }
+  .deal__img--veg { grid-area: veg; align-self: end; justify-self: start; margin: 0 0 24px 4%; width: min(300px, 92%); }
+  .deal__img--farmer { grid-area: farmer; justify-self: end; margin: 0 4% 0 0; width: min(300px, 92%); }
+}
+@media (max-width: 480px) {
+  .countdown { gap: 5px; }
+  .countdown__box { width: 62px; height: 56px; }
+  .countdown__box strong { font-size: 21px; }
+  .countdown i { font-size: 12px; }
+}
